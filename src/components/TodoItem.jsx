@@ -10,9 +10,19 @@ class TodoItem extends React.Component {
         }
     }
 
+    markTodoItem = event => {
+        let target = event.currentTarget.firstElementChild;
+        console.log(target.firstElementChild);
+        target.style.textDecoration = "line-through";
+
+    }
+
     render() {
         return (
-            <div className="todo_item">{this.state.text}</div>
+            <div className="todo_item" onClick={this.markTodoItem}>
+                <span>{this.state.text}</span>
+                <span>×</span>
+            </div>
         );
     }
 
