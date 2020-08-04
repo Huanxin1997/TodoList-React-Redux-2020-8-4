@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import TodoList from '../components/TodoList';
+import { MARK_TODO } from '../actions';
 
 const mapStateToProps = state => {
     return {
@@ -7,6 +8,15 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        markToDo: index => {
+            dispatch(MARK_TODO(index));
+        }
+    }
+}
+
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(TodoList);

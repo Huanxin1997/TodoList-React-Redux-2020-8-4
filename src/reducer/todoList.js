@@ -1,4 +1,5 @@
 const todoList = (state = [], action) => {
+    console.log(action)
     switch (action.type) {
         case "ADD_TODO":
             return [...state, {
@@ -6,9 +7,8 @@ const todoList = (state = [], action) => {
                 isMarked: false
             }];
         case "MARK_TODO":
-            return state[action.index].isMarked = true;
-        case "CANCLE_MARK_TODO":
-            return state[action.index].isMarked = false;
+            state[action.index].isMarked = !state[action.index].isMarked;
+            return state;
         default:
             return state;
     }

@@ -12,7 +12,12 @@ class TodoItem extends React.Component {
 
     markTodoItem = event => {
         let target = event.currentTarget.firstElementChild;
-        target.style.textDecoration = "line-through";
+        if(target.style.textDecoration === "line-through") {
+            target.style.textDecoration = "none";
+        } else {
+            target.style.textDecoration = "line-through";
+        }
+        this.props.markTodo(this.props.id);
     }
 
     render() {
