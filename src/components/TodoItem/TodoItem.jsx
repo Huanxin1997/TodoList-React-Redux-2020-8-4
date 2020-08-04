@@ -7,7 +7,7 @@ class TodoItem extends React.Component {
     }
 
     deleteTodo = event => {
-        event.stopPropagation(); 
+        event.stopPropagation();
         this.props.deleteTodo(this.props.id);
     }
 
@@ -15,7 +15,7 @@ class TodoItem extends React.Component {
         return (
             <div className={"todo_item"} onClick={this.markTodoItem}>
                 <span className={this.props.isMarked ? "marked" : ""}>{this.props.value}</span>
-                <span onClick={this.deleteTodo}>×</span>
+                <span style={{ cursor: "pointer" }} onClick={this.deleteTodo}>×</span>
             </div>
         );
     }
