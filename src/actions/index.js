@@ -12,3 +12,8 @@ export const CANCEL_MARK_TODO = index => ({
     type: "CANCEL_MARK_TODO",
     index: index
 })
+
+export const REMOVE_TODO = index => ({
+    type: "REMOVE_TODO",
+    index: index
+})

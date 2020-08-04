@@ -37,3 +37,7 @@ header {
   color: #fff;
   background-color: #00c8be;
 }
+
+.marked {
+  text-decoration: line-through;
+}

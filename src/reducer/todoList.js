@@ -1,5 +1,4 @@
 const todoList = (state = [], action) => {
-    console.log(action)
     switch (action.type) {
         case "ADD_TODO":
             return [...state, {
@@ -8,7 +7,12 @@ const todoList = (state = [], action) => {
             }];
         case "MARK_TODO":
             state[action.index].isMarked = !state[action.index].isMarked;
-            return state;
+            return [...state];
+        case "REMOVE_TODO":
+            console.log(action.index)
+            state.splice(action.index, 1);
+            console.log(state)
+            return [...state];
         default:
             return state;
     }
