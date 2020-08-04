@@ -7,7 +7,7 @@ class TodoList extends React.Component {
         return (
             <div className="todo_container">
                 {
-                    this.props.todoList.map((value, index) => <TodoItem key={index} value={value} />)
+                    this.props.todoList.map((value, index) => <TodoItem key={index} value={value.text} />)
                 }
             </div>
         );

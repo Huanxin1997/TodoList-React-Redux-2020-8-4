@@ -12,9 +12,7 @@ class TodoItem extends React.Component {
 
     markTodoItem = event => {
         let target = event.currentTarget.firstElementChild;
-        console.log(target.firstElementChild);
         target.style.textDecoration = "line-through";
-
     }
 
     render() {
