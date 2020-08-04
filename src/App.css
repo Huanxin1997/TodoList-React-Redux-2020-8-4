@@ -5,7 +5,7 @@
 .todo_item {
   display: flex;
   justify-content: space-between;
-  margin: 8px;
+  margin: 8px 125px;
   padding: 8px 12px;
   text-align: left;
   border: 1px solid #666;
@@ -14,6 +14,12 @@
 
 .todo_container {
   margin: 60px auto;
+  max-width: 900px;
+  max-height: 400px;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  background-color: #fafafa;
+  overflow: auto;
 }
 
 .todo_input {
@@ -23,10 +29,12 @@
 }
 
 .button {
-  padding: 8px;
+  padding: 10px;
+  width: 100px;
   border: none;
   outline: none;
-  width: 100px;
+  color: #fff;
+  background: #00c8be;
 }
 
 header {
@@ -64,4 +72,12 @@ aside div {
   background-color: #fff;
   border: 1px solid #00c8be;
   border-top: none;
+}
+
+aside div:hover {
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
 }
