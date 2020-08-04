@@ -17,3 +17,13 @@ export const REMOVE_TODO = index => ({
     type: "REMOVE_TODO",
     index: index
 })
+
+export const MARK_MARKED_TODO = index => ({
+    type: "MARK_MARKED_TODO",
+    index: index
+})
+
+export const REMOVE_MARKED_TODO = index => ({
+    type: "REMOVE_MARKED_TODO",
+    index: index
+})

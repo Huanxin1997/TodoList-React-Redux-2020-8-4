@@ -13,7 +13,6 @@
 }
 
 .todo_container {
-  width: 700px;
   margin: 60px auto;
 }
 
@@ -40,4 +39,29 @@ header {
 
 .marked {
   text-decoration: line-through;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+aside {
+  flex: 1;
+  min-width: 250px;
+  background-color: #eee;
+}
+
+.main {
+  flex: 4;
+  min-width: 650px;
+}
+
+aside div {
+  padding: 14px 8px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #00c8be;
+  border-top: none;
 }
