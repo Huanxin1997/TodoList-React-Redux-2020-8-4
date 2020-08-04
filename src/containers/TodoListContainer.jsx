@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TodoList from '../components/TodoList/TodoList';
-import { MARK_TODO, REMOVE_TODO } from '../actions';
+import { MARK_TODO, REMOVE_TODO, ADD_TODO } from '../actions';
 
 const mapStateToProps = state => {
     return {
@@ -10,11 +10,14 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        markToDo: index => {
-            dispatch(MARK_TODO(index));
+        markToDo: id => {
+            dispatch(MARK_TODO(id));
         },
-        removeTodo: index => {
-            dispatch(REMOVE_TODO(index));
+        removeTodo: id => {
+            dispatch(REMOVE_TODO(id));
+        },
+        addTodo: todo => {
+            dispatch(ADD_TODO(todo));
         }
     }
 }
