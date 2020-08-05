@@ -5,12 +5,14 @@ import api from '../services/index';
 import { CREATE_UNSUCCESSFUL } from '../utils/index';
 
 const mapDispatchToProps = dispatch => ({
-    addTodo: todo => {
-        api.createTodo(todo).then(response => {
-            dispatch(ADD_TODO([response.data]));
-        }).catch(() => {
+    addTodo: async todo => {
+        let response = await api.createTodo(todo)
+        console.log(response)
+        if(response.status === 201) {
+            dispatch(ADD_TODO([response.data]))
+        } else {
             alert(CREATE_UNSUCCESSFUL)
-        })
+        }
     }
 })
 
