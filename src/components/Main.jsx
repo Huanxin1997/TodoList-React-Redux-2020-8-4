@@ -6,6 +6,10 @@ import { HashRouter as Router, Link, Route } from 'react-router-dom';
 
 class Main extends React.Component {
 
+    componentWillMount() {
+        this.props.initTodo()
+    }
+
     markTodo = index => {
         this.props.markToDo(index);
     }
@@ -16,24 +20,24 @@ class Main extends React.Component {
 
     render() {
         return (
-                <Router>
-                    <div className={"container"}>
-                        <aside>
-                            <Link to="/todoListMade">
-                                <div>Made</div>
-                            </Link>
-                            <Link to="/allTodoList">
-                                <div>All</div>
-                            </Link>
-                        </aside>
-                        <div className={"main"}>
-                            <h2>Todo List</h2>
-                            <TodoFormContainer />
-                            <Route path="/todoListMade" component={MarkedTodoListContainer} />
-                            <Route path="/allTodoList" component={TodoListContainer} />
-                        </div>
+            <Router>
+                <div className={"container"}>
+                    <aside>
+                        <Link to="/all">
+                            <div>All</div>
+                        </Link>
+                        <Link to="/done">
+                            <div>Made</div>
+                        </Link>
+                    </aside>
+                    <div className={"main"}>
+                        <h2>Todo List</h2>
+                        <TodoFormContainer />
+                        <Route path="/all" component={TodoListContainer} />
+                        <Route path="/done" component={MarkedTodoListContainer} />
                     </div>
-                </Router>
+                </div>
+            </Router>
         );
     }
 

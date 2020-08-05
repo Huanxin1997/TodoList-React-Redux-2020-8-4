@@ -1,5 +1,6 @@
 import React from 'react';
-import api from '../../services/apiList';
+import './index.css';
+import { INPUT_UNVALID } from '../../utils/index';
 
 class TodoForm extends React.Component {
 
@@ -20,7 +21,7 @@ class TodoForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         if(this.state.inputValue === "") {
-            alert("Please input todo list valid.");
+            alert(INPUT_UNVALID)
             return;
         } 
         let todo = {
@@ -29,11 +30,8 @@ class TodoForm extends React.Component {
         this.setState({
             inputValue: ""
         });
-        api.createTodo(todo).then(response => {
-            this.props.addTodo(response.data)
-        }).catch(() => {
-            alert("Create todo list unsuccessful!")
-        })
+
+        this.props.addTodo(todo)
     }
 
 

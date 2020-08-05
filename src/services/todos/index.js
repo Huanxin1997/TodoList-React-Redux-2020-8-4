@@ -13,6 +13,6 @@ export const createTodo = todo => {
     return axios.post(urls.createTodo, todo);
 }
 
-export const updateTodoById = id => {
-    return axios.put(urls.updateTodo(id));
+export const updateTodoById = (id, todo) => {
+    return axios.put(urls.updateTodo(id), todo);
 }

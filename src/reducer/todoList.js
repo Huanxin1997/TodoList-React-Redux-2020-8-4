@@ -3,7 +3,7 @@ let todos = [];
 const todoList = (state = todos, action) => {
     switch (action.type) {
         case "ADD_TODO":
-            return [...state, action.todo];
+            return [...state, ...action.todo];
         case "MARK_TODO":
             state.forEach(item => {
                 if(item.id === action.id) {

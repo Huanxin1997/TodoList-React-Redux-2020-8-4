@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import TodoList from '../components/TodoList/TodoList';
+import api from '../services/index';
+import { UPDATE_UNSUCCESSFUL } from '../utils/index';
 import { MARK_TODO, REMOVE_TODO, ADD_TODO } from '../actions';
 
 const mapStateToProps = state => {
@@ -10,11 +12,17 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        markToDo: id => {
-            dispatch(MARK_TODO(id));
+        markToDo: (id, todo) => {
+            api.updateTodoById(id, todo).then(() => {
+                dispatch(MARK_TODO(id));
+            }).catch(() => {
+                alert(UPDATE_UNSUCCESSFUL)
+            })
         },
         removeTodo: id => {
-            dispatch(REMOVE_TODO(id));
+            api.deleteTodoById(id).then(() => {
+                dispatch(REMOVE_TODO(id));
+            })
         },
         addTodo: todo => {
             dispatch(ADD_TODO(todo));
