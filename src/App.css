@@ -1,15 +1,24 @@
-.App {
-  text-align: center;
+
+#components-layout-demo-top-side-2 .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left;
 }
 
-.button {
+.site-layout-background {
+  background: #fff;
+}
+
+/* .button {
   padding: 10px;
   width: 100px;
   border: none;
   outline: none;
   color: #fff;
   background: #00c8be;
-}
+}*/
 
 header {
   padding: 28px 0;
@@ -18,7 +27,7 @@ header {
   color: #fff;
   background-color: #00c8be;
 }
-
+/*
 .container {
   display: flex;
   justify-content: space-around;
@@ -50,4 +59,4 @@ aside div:hover {
 
 a {
   text-decoration: none;
-}
+} */

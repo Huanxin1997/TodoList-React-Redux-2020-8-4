@@ -6,7 +6,7 @@ import { MARK_TODO, REMOVE_TODO, ADD_TODO } from '../actions';
 
 const mapStateToProps = state => {
     return {
-        todoList: state.todoList
+        todoList: state.todoList.sort()
     }
 }
 
