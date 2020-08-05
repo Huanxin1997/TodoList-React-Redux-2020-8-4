@@ -1,0 +1,9 @@
+.todo_container {
+    margin: 40px auto;
+    max-width: 900px;
+    max-height: 700px;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    background-color: #fafafa;
+    overflow: auto;
+}

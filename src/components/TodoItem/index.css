@@ -1,0 +1,13 @@
+.marked {
+    text-decoration: line-through;
+}
+
+.todo_item {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 125px;
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #666;
+    border-radius: 8px;
+}
