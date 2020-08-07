@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoListContainer from '../containers/TodoListContainer';
 import MarkedTodoListContainer from '../containers/MarkedTodoListContainer';
-// import TodoFormContainer from '../containers/TodoFormContainer';
+import TodoFormContainer from '../containers/TodoFormContainer';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
 
 import { Layout, Menu } from 'antd';
@@ -24,23 +24,6 @@ class Main extends React.Component {
 
     render() {
         return (
-            // <Router>
-            //     {/* <div className={"container"}>
-            //         <aside>
-            //             <Link to="/all">
-            //                 <div>All</div>
-            //             </Link>
-            //             <Link to="/done">
-            //                 <div>Made</div>
-            //             </Link>
-            //         </aside>
-            //         <div className={"main"}>
-            //             <h2>Todo List</h2>
-            //             <TodoFormContainer />
-            // <Route path="/all" component={TodoListContainer} />
-            // <Route path="/done" component={MarkedTodoListContainer} />
-            //         </div>
-            //     </div> */}
             <Layout>
                 <header />
                 <Router>
@@ -53,7 +36,7 @@ class Main extends React.Component {
                                 style={{ height: '100%', borderRight: 0 }}
                             >
                                 <Menu.Item key="1">
-                                    <Link to="/all">All</Link>
+                                    <Link to="/">All</Link>
                                 </Menu.Item>
                                 <Menu.Item key="2">
                                     <Link to="/done">Done</Link>
@@ -69,8 +52,9 @@ class Main extends React.Component {
                                     minHeight: 280,
                                 }}
                             >
-                                <Route path="/all" component={TodoListContainer} />
-                                <Route path="/done" component={MarkedTodoListContainer} />
+                                <TodoFormContainer />
+                                <Route path="/" exact component={TodoListContainer} />
+                                <Route path="/done" exact component={MarkedTodoListContainer} />
                             </Content>
                         </Layout>
                     </Layout>

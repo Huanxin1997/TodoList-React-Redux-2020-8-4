@@ -11,3 +11,16 @@
     border: 1px solid #666;
     border-radius: 8px;
 }
+
+p {
+    overflow: hidden;
+}
+
+.marked {
+    text-decoration: line-through;
+}
+
+.ant-card {
+    max-width: 800px;
+    min-width: 28vw !important;
+}

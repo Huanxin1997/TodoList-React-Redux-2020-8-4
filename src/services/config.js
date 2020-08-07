@@ -1,7 +1,4 @@
 import axios from 'axios'
-import { Component } from 'react'
-
-Component.prototype.$axios = axios
 
 const instance = axios.create({
     baseURL: 'https://5e9ec500fb467500166c4658.mockapi.io'
@@ -20,3 +17,5 @@ axios.interceptors.response.use(function (response) {
 }, function (error) {
     return Promise.reject(error);
 });
+
+export default instance;

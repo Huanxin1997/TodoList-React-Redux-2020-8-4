@@ -1,6 +1,8 @@
 import React from 'react';
 import './index.css';
 import { INPUT_UNVALID } from '../../utils/index';
+import { Button, Modal, Input, message } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 
 class TodoForm extends React.Component {
 
@@ -8,7 +10,8 @@ class TodoForm extends React.Component {
         super();
 
         this.state = {
-            inputValue: ""
+            inputValue: "",
+            visible: false
         }
     }
 
@@ -18,28 +21,52 @@ class TodoForm extends React.Component {
         })
     }
 
-    handleSubmit = event => {
-        event.preventDefault();
+    handleSubmit = () => {
         if(this.state.inputValue === "") {
-            alert(INPUT_UNVALID)
+            message.success(INPUT_UNVALID)
             return;
         } 
         let todo = {
             content: this.state.inputValue
         }
-        this.setState({
-            inputValue: ""
-        });
 
         this.props.addTodo(todo)
+        message.success("Create TODO success")
     }
 
+    showModel = () => {
+        this.setState({
+            visible: true
+        })
+    }
+
+    handleOk = () => {
+        this.handleSubmit();
+        this.setState({
+            visible: false,
+        });
+    }
+
+    handleCancel = e => {
+        this.setState({
+            visible: false,
+        });
+    }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" className="todo_input" value={this.state.inputValue} onChange={this.handleInput} placeholder="Input a new todo here..." />
-                <button type="submit" className="button">Add</button>
+                <Modal
+                    title="Add TODO"
+                    visible={this.state.visible}
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                >
+                    <Input placeholder="Input your TODO content!" onChange={this.handleInput} onPressEnter={this.handleSubmit} />
+                </Modal>
+                <Button onClick={this.showModel}>
+                    <PlusOutlined />
+                </Button>
             </form>
 
         );

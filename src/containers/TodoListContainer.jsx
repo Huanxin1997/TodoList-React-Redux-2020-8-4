@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => {
 
         removeTodo: async id => {
             let response = await api.deleteTodoById(id)
-            if(response.status === 200) {
+            if(response.status === 204) {
                 dispatch(REMOVE_TODO(id));
             } else {
                 alert(DELETE_UNSUCCESSFUL)

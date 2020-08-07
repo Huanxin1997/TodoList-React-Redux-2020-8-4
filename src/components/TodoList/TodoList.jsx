@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
+import { Row } from 'antd';
 import './index.css';
 
 class TodoList extends React.Component {
@@ -18,9 +19,11 @@ class TodoList extends React.Component {
     render() {
         return (
             <div className="todo_container">
-                {
-                    this.props.todoList.map((value, index) => <TodoItem key={index} id={value.id} isMarked={value.status} value={value.content} deleteTodo={this.deleteTodo} markTodo={this.markTodo} />)
-                }
+                <Row gutter={16}>
+                    {
+                        this.props.todoList.map((value, index) => <TodoItem key={index} id={value.id} isMarked={value.status} value={value.content} deleteTodo={this.deleteTodo} markTodo={this.markTodo} />)
+                    }
+                </Row>
             </div>
         );
     }
