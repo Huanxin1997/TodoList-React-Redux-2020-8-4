@@ -19,8 +19,3 @@ p {
 .marked {
     text-decoration: line-through;
 }
-
-.ant-card {
-    max-width: 800px;
-    min-width: 28vw !important;
-}
