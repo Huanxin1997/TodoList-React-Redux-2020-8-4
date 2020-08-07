@@ -14,7 +14,7 @@ class TodoItem extends React.Component {
     }
 
     markTodoItem = () => {
-        this.props.markTodo(this.props.id);
+        this.props.markTodo(this.props.id, this.props.isMarked);
         message.success('Mark this card success');
     }
 

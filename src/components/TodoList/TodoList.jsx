@@ -5,9 +5,15 @@ import './index.css';
 
 class TodoList extends React.Component {
 
-    markTodo = id => {
+    markTodo = (id, status) => {
+        let updateStatus = true
+        if(status) {
+            updateStatus = false
+        }
+        console.log(status);
+        console.log(updateStatus);
         let todo = {
-            status: true
+            status: updateStatus
         }
         this.props.markToDo(id, todo)
     }
