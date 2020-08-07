@@ -14,12 +14,12 @@ class TodoItem extends React.Component {
     }
 
     markTodoItem = () => {
-        this.props.markTodo(this.props.id, this.props.isMarked);
+        this.props.markTodo(this.props.todo.id, this.props.todo.isMarked);
         message.success('Mark this card success');
     }
 
     deleteTodo = () => {
-        this.props.deleteTodo(this.props.id);
+        this.props.deleteTodo(this.props.todo.id);
         message.success('Delete this card success');
     }
 
@@ -53,8 +53,8 @@ class TodoItem extends React.Component {
                 >
                     <p>Do you want to delete this TODO?</p>
                 </Modal>
-                <Card title={`TODO-${this.props.id}`} hoverable style={{ flex: 1, minWidth: "12vw", margin: "10px 8px" }}>
-                    <p className={this.props.isMarked ? "marked" : ""}>{this.props.value}</p>
+                <Card title={`TODO-${this.props.todo.id}——${this.props.todo.createDate}`} hoverable style={{ flex: 1, minWidth: "12vw", margin: "10px 8px" }}>
+                    <p className={this.props.todo.status ? "marked" : ""}>{this.props.todo.content}</p>
                     <Space>
                         <Button type="danger" size="small" onClick={this.showModel}>
                             <DeleteOutlined />

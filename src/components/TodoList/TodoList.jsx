@@ -24,10 +24,10 @@ class TodoList extends React.Component {
 
     render() {
         return (
-            <div className="todo_container">
-                <Row gutter={16}>
+            <div>
+                <Row gutter={[40, 32]} justify={"start"}>
                     {
-                        this.props.todoList.map((value, index) => <TodoItem key={index} id={value.id} isMarked={value.status} value={value.content} deleteTodo={this.deleteTodo} markTodo={this.markTodo} />)
+                        this.props.todoList.map((todo, index) => <TodoItem key={index} todo={todo} deleteTodo={this.deleteTodo} markTodo={this.markTodo} />)
                     }
                 </Row>
             </div>

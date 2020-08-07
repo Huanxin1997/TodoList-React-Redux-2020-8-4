@@ -13,9 +13,12 @@
 }
 
 p {
+    font-size: 18px;
+    font-weight: bold;
     overflow: hidden;
 }
 
 .marked {
+    background-color: #d1d1d1;
     text-decoration: line-through;
 }
